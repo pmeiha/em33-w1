@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+</head>
+
+<body style='background-color: #EEEEEE;'>
+
+  <span style='color: #003366;'>
+
+    <h1>Lets generate a random number</h1>
+    <p>Hostname: <span id='hostname'>-</span></p>
+    <p>Spannung: <span id='Spannung'>-</span></p>
+    <p>Strom: <span id='Strom'>-</span></p>
+    <p>Geschwindigkeit: <span id='speed'>-</span></p>
+    <p>Geschwindigkeit in Prozent: <span id='speedp'>-</span></p>
+    <p>Bremsen in Prozent: <span id='brakep'>-</span></p>
+    <p><button type='button' id='BTN_SEND_BACK'>
+        Send info to ESP32
+      </button></p>
+
+  </span>
+
+</body>
+<script>
+  var Socket;
+  document.getElementById('BTN_SEND_BACK').addEventListener('click', button_send_back);
+  function init() {
+    Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
+    Socket.onmessage = function (event) {
+      processCommand(event);
+    };
+  }
+  function button_send_back() {
+    Socket.send('Sending back some random stuff');
+  }
+  function processCommand(event) {
+    var obj = JSON.parse(event.data);
+    document.getElementById('hostname').innerHTML = obj.hostname;
+    document.getElementById('Spannung').innerHTML = obj.Spannung;
+    document.getElementById('Strom').innerHTML = obj.Strom;
+    document.getElementById('speed').innerHTML = obj.speed;
+    document.getElementById('speedp').innerHTML = obj.speedp;
+    document.getElementById('brakep').innerHTML = obj.brakep;
+    console.log(obj);
+  }
+  window.onload = function (event) {
+    init();
+  }
+</script>
+
+</html>

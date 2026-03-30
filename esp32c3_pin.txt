@@ -1,0 +1,74 @@
+
+Link zu der PIN Beschreibung
+https://github.com/AchimPieters/Downloads/blob/main/ESP32C3-SUPER-MINI-PINOUT-2025.pdf
+
+Diese Pinbelegung müssen wir auch im Probeaufbau testen 
+
+Der Print sollte sowohl für die Lok wie auch für meine Sitzwagen verwendet werden können
+
+em33 Projekt
+                    5V           5 GPIO5 N/C
+                    GND          6 MOSI -> MAX7221 DIN
+                    3V3          7 I/O -> MAX7221 Load (CS)
+SCK -> MAX7221 CLK  4            8 N/C (Onboard LED/Boot Strap)
+RcPuls Speed GPIO3  3            9 N/C (Boot Strap)
+RcPuls Brems        2           10 GPIO10 PulsOut Geschwindigkeit
+Analog Strom    A1  1           20 GPIO20 PulsOut Bremse
+Analog Spannung A0  0           21 GPIO21 
+
+--------------------------------------------------------------------
+
+em33 Lok
+                    5V           5 GPIO5 N/C
+                    GND          6 MOSI -> MAX7221 DIN
+                    3V3          7 I/O -> MAX7221 Load (CS)
+SCK -> MAX7221 CLK  4            8 N/C (Onboard LED/Boot Strap)
+RcPuls Speed GPIO3  3            9 N/C (Boot Strap)
+RcPuls Brems        2           10 GPIO10 
+Analog Strom    A1  1           20 GPIO20 (PulsOut Bremse kann direkt am Empfänger abgegriffen werden)
+Analog Spannung A0  0           21 GPIO21
+
+--------------------------------------------------------------------
+
+em33 Sitzwagen1
+                    5V           5 GPIO5 N/C
+                    GND          6 
+                    3V3          7 
+                    4            8 N/C (Onboard LED/Boot Strap)
+                    3            9 N/C (Boot Strap)
+                    2           10 GPIO10 PulsOut Geschwindigkeit
+                    1           20 GPIO20 PulsOut Bremse
+                    0           21 GPIO21 
+
+--------------------------------------------------------------------
+
+em33 Sitzwagen2
+                    5V           5 GPIO5 N/C
+                    GND          6 
+                    3V3          7 
+                    4            8 N/C (Onboard LED/Boot Strap)
+                    3            9 N/C (Boot Strap)
+                    2           10 GPIO10 PulsOut Geschwindigkeit
+                    1           20 GPIO20 PulsOut Bremse
+                    0           21 GPIO21 
+
+--------------------------------------------------------------------
+
+Brems Relais Bord zum ansteuern des Linearmotors und 5V Regler für den ESP32C3
+7-28V Gebürstet DC Motor Controller 20A 2-Wege Empfänger Control Schalter Relais Vorwärts Rückwärts 
+5V/300MA UBEC Für RC Modell Boot Auto
+https://a.aliexpress.com/_EGPaCyg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
