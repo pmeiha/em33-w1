@@ -16,8 +16,8 @@
 #include <ESP32Servo.h>
 
 #include "em33.h"
-#include "em33-2-webserver.h"
-#include "em33-2-websockets.h"
+#include "em33-webserver.h"
+#include "em33-websockets.h"
 #include "em33-2-mesh.h"
 #include "em33-2-puls.h"
 #include "em33-2-servo.h"
@@ -30,3 +30,5 @@ extern int em33StatusCode;
 extern em33Msg_t em33MsgLok;
 extern em33Msg_t em33MsgW1;
 extern em33Msg_t em33MsgW2;
+
+extern em33Config_t em33Config;
