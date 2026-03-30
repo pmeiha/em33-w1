@@ -1,9 +1,0 @@
-{
-  "additionalFiles": "../../..,../../..,../../..,../../..,../../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..,../..",
-  "compiler.optimization_flags": "-Os",
-  "customBuildProperties": "",
-  "fqbn": "esp32:esp32:nologo_esp32c3_super_mini:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=default,CPUFreq=160,FlashFreq=80,FlashMode=qio,PartitionScheme=no_ota,DebugLevel=none,EraseFlash=none,JTAGAdapter=default",
-  "hardwareFolders": "/home/pmei/.arduino15/internal/esp32_esp32_3.3.7_d11527a2071b9cce,/home/pmei/.arduino15/internal/esp32_esp32_3.3.7_d11527a2071b9cce",
-  "otherLibrariesFolders": "/home/pmei/Documents/Arduino/libraries",
-  "sketchLocation": "/home/pmei/Projekt/RC/em33-2"
-}
